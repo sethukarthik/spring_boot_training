@@ -7,7 +7,6 @@ public class ExcuteMavenDemo {
 	public static void main(String[] args) {
 		
 		ClassPathXmlApplicationContext cpxac = new ClassPathXmlApplicationContext("maven_demo.xml");
-//		cpxac.
 	
 	}
 	

@@ -10,17 +10,20 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
 		
-		
-		<!-- (Shortcut for command -> CTRL + SHIFT + / -->
-		
-		<bean id="customer" class="com.spring_demo.maven_demo.Customer">
-			<property name="userId" value="1"></property>
-			<property name="userName" value="MavenUser"></property>
-		</bean>
-		
-		<bean id="account" class="com.spring_demo.maven_demo.Account">
-			<property name="customer">
-				<ref bean="customer"/>
-			</property>
-		</bean>
+	<bean id="product" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Rice"></property>
+		<property name="productId" value="100"></property>
+	</bean>
+	
+	<bean id="product_1" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Wheat"></property>
+		<property name="productId" value="200"></property>
+	</bean>
+	
+	<bean id="inventory" class="com.spring_demo.inventary.Inventory">
+		<property name="product">
+			<ref bean="product"/>
+		</property>
+	</bean>
+
 </beans>

@@ -15,6 +15,7 @@
 		
 		<bean id="customer" class="com.spring_demo.maven_demo.Customer">
 			<property name="userId" value="1"></property>
+			<property name="userName" value="MavenUser"></property>
 		</bean>
 		
 		<bean id="account" class="com.spring_demo.maven_demo.Account">
