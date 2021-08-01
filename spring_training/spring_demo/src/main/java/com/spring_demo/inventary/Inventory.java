@@ -2,13 +2,15 @@ package com.spring_demo.inventary;
 
 public class Inventory {
 	private Product product;
+	private int count = 1;
 
 	public Inventory(Product product) {
 		this.product = product;
 	}
 
 	public Inventory() {
-		System.out.println("Default Inventory");	
+		System.out.println("Default Inventory " + count);	
+		count++;
 	}
 
 	public Product getProduct() {

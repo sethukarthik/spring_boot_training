@@ -20,9 +20,23 @@
 		<property name="productId" value="200"></property>
 	</bean>
 	
+	<bean id="product_3" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Cooking Oil"></property>
+		<property name="productId" value="300"></property>
+	</bean>
+	
+	<!--  Inventory inventory = new Inventory() -->
+	<!--  Inventory inventory_1 = new Inventory() -->
 	<bean id="inventory" class="com.spring_demo.inventary.Inventory">
 		<property name="product">
 			<ref bean="product"/>
+		</property>
+	</bean>
+	
+	<!-- This bean has a scope of prototype -->
+	<bean id="inventory_1" class="com.spring_demo.inventary.Inventory" scope="prototype">
+		<property name="product">
+			<ref bean="product_1"/>
 		</property>
 	</bean>
 
