@@ -33,10 +33,12 @@
 		</property>
 	</bean>
 	
+	<bean id="stock" class="com.spring_demo.inventary.Stock"></bean>
+	
 	<!-- This bean has a scope of prototype -->
 	<bean id="inventory_1" class="com.spring_demo.inventary.Inventory" scope="prototype">
 		<property name="product">
-			<ref bean="product_1"/>
+			<ref bean="stock"/>
 		</property>
 	</bean>
 

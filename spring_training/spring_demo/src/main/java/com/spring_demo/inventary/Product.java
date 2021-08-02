@@ -28,6 +28,10 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+	
+	public void testInheritance() {
+		System.out.println("This is from Product method");
+	}
 
 	@Override
 	public String toString() {

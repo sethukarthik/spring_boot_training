@@ -18,6 +18,9 @@ public class InventoryMain {
 		System.out.println(inventory);
 		System.out.println(inventory.getProduct().getProductName());
 		
+		System.out.println("------ Stock -------");
+		inventory_1.getProduct().testInheritance();
+		
 		Product pro = invProd.getBean("product", Product.class);
 		System.out.println(pro);
 		
