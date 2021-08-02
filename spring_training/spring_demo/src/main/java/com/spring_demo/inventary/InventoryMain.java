@@ -10,6 +10,7 @@ public class InventoryMain {
 		
 		Inventory inventory = invProd.getBean("inventory", Inventory.class);
 		Inventory inventory_1 = invProd.getBean("inventory_1", Inventory.class);
+		Inventory inventory_2 = invProd.getBean("inventory_2", Inventory.class);
 		System.out.println(inventory);
 		System.out.println(inventory_1);
 
@@ -20,6 +21,12 @@ public class InventoryMain {
 		
 		System.out.println("------ Stock -------");
 		inventory_1.getProduct().testInheritance();
+				
+		System.out.println("------ New Product Stock -------");
+		inventory_2.getProduct().testInheritance(); // Stock Method
+		inventory_2.setProduct(new Product(140, "Snacks"));
+		System.out.println(inventory_2.getProduct());
+		inventory_2.getProduct().testInheritance(); // Product Method
 		
 		Product pro = invProd.getBean("product", Product.class);
 		System.out.println(pro);

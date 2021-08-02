@@ -32,6 +32,10 @@ public class Product {
 	public void testInheritance() {
 		System.out.println("This is from Product method");
 	}
+	
+	public void testInheritance_1() {
+		System.out.println("This is from Product method");
+	}
 
 	@Override
 	public String toString() {
