@@ -10,9 +10,13 @@ public class Passanger {
 		this.fullName = fullName;
 	}
 	
-	public Passanger(long pnr, String string) {
+	public Passanger(long pnr, String fullName) {
 		this.pnr = pnr;
 		this.fullName = fullName;
+	}
+	
+	public Passanger() {
+		System.out.println("Default Constructor from Passanger");
 	}
 
 	public String getPassagerName() {

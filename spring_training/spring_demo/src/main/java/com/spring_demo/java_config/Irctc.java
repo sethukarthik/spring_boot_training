@@ -8,7 +8,11 @@ public class Irctc {
 		AnnotationConfigApplicationContext  acac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 		Train train = acac.getBean("train", Train.class);
 		Passanger psg = acac.getBean("passanger", Passanger.class);
-		System.out.println(train);
+		psg.setPassagerName(123456789l, "Sethu");
 		System.out.println(psg);
+		train.setPassanger(psg);
+		train.setTrainCode(12662);
+		train.setTrainName("Pothigai");
+		System.out.println(train);
 	}
 }
