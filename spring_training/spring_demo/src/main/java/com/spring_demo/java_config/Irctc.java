@@ -1,11 +1,13 @@
 package com.spring_demo.java_config;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Irctc {
 	
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext  acac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+//		ClassPathXmlApplicationContext
 		Train train = acac.getBean("train", Train.class);
 		Passanger psg = acac.getBean("passanger", Passanger.class);
 		psg.setPassagerName(123456789l, "Sethu");
@@ -14,5 +16,5 @@ public class Irctc {
 		train.setTrainCode(12662);
 		train.setTrainName("Pothigai");
 		System.out.println(train);
-	}
+	}  
 }
