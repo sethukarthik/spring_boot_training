@@ -6,6 +6,7 @@ public class InventoryMain {
 	public static void main(String[] args) {
 		
 		ClassPathXmlApplicationContext invProd = new ClassPathXmlApplicationContext("inventory_main.xml");
+		//ClassPathXml
 		System.out.println("----------" + invProd + "----------");
 		
 		Inventory inventory = invProd.getBean("inventory", Inventory.class);
@@ -24,12 +25,18 @@ public class InventoryMain {
 				
 		System.out.println("------ New Product Stock -------");
 		inventory_2.getProduct().testInheritance(); // Stock Method
-		inventory_2.setProduct(new Product(140, "Snacks"));
+		inventory_2.setProduct(new Product(140, "Snacks")); // There is no stock // Product p = new Product();
 		System.out.println(inventory_2.getProduct());
 		inventory_2.getProduct().testInheritance(); // Product Method
 		
 		Product pro = invProd.getBean("product", Product.class);
 		System.out.println(pro);
+		
+		HelloWorld hell = invProd.getBean("hellow", HelloWorld.class);
+//		hell
+		HelloWorldTwo hell2 = invProd.getBean("hellow_2", HelloWorldTwo.class);
+		hell2.hello_2();
+		hell.hello();
 		
 		invProd.close();
 	}

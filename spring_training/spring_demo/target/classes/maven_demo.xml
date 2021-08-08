@@ -18,9 +18,21 @@
 			<property name="userName" value="MavenUser"></property>
 		</bean>
 		
-		<bean id="account" class="com.spring_demo.maven_demo.Account">
+		<bean id="customer_1" class="com.spring_demo.maven_demo.Customer">
+			<property name="userId" value="2"></property>
+			<property name="userName" value="SpringUser"></property>
+		</bean>
+		
+		<!-- We can use either Id or Name attribute -->
+		<bean name="account" class="com.spring_demo.maven_demo.Account">
 			<property name="customer">
 				<ref bean="customer"/>
+			</property>
+		</bean>
+		
+		<bean name="account_1" class="com.spring_demo.maven_demo.Account" scope="prototype">
+			<property name="customer">
+				<ref bean="customer_1"/>
 			</property>
 		</bean>
 </beans>

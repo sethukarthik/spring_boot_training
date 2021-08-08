@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 @PropertySource("classpath:price.properties")
+@PropertySource("classpath:price2.properties")
 public class AppConfig {
 	
 	@Inject
@@ -17,9 +18,9 @@ public class AppConfig {
 	@Bean
 	public Product product() {
 		Product product = new Product();
-		int pencilPrice = env.getProperty("pencil", Integer.class);
-		product.setName("pencil");
-		product.setPrice(pencilPrice);
+		String sp = env.getProperty("shampoo", String.class);
+		product.setName(sp);
+		product.setPrice(200);
 		
 		return product;
 	}

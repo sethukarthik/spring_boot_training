@@ -31,6 +31,10 @@ public class Customer {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	
+	public void print() {
+		System.out.println("Printing instance method of customer");
+	}
 
 	@Override
 	public String toString() {

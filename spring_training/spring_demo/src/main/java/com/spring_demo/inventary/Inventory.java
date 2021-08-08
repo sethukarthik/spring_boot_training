@@ -1,7 +1,7 @@
 package com.spring_demo.inventary;
 
 public class Inventory {
-	private Product product;
+	private Product product; //has_a relationship
 	private int count = 1;
 
 	public Inventory(Product product) {

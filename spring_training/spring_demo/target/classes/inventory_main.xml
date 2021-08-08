@@ -39,17 +39,17 @@
 		</property>
 	</bean>
 	
-	<!-- Stock stock = new Stock() stock.setProductName, stock.setProductId -->
+	<!-- Stock stock = new Stock(); stock.setProductName, stock.setProductId -->
 	<bean id="stock" class="com.spring_demo.inventary.Stock">
-		<property name="productName" value="Charger"></property>
+		<property name="productName" value="Charger"></property> <!-- setMethod -->
 		<property name="productId" value="400"></property>	
 	</bean>
 	
-	<bean id="stock_1" class="com.spring_demo.inventary.Stock"></bean>
+	<bean id="stock_1" class="com.spring_demo.inventary.Stock"></bean> <!-- Stock stock_1 = new Stock(); -->
 	
 	<!-- Stock stock = new Stock() -->
 	<!-- This bean has a scope of prototype -->
-	<bean id="inventory_1" class="com.spring_demo.inventary.Inventory" scope="prototype">
+	<bean id="inventory_1" class="com.spring_demo.inventary.Inventory" scope="prototype"> <!-- rf_id = 200 -->
 		<property name="product">
 			<ref bean="stock"/>
 		</property>
@@ -60,5 +60,8 @@
 			<ref bean="stock_1"/>
 		</property>
 	</bean>
+	
+	<bean id="hellow" class="com.spring_demo.inventary.HelloWorld"></bean>
+	<bean id="hellow_2" class="com.spring_demo.inventary.HelloWorldTwo" parent="hellow"></bean>
 
 </beans>

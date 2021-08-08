@@ -26,7 +26,7 @@ public class SpringConfiguration {
 	
 	@Bean
 	public Passanger passanger() {
-		System.out.println("1");
+		System.out.println("4");
 		return new Passanger();
 	}
 	
