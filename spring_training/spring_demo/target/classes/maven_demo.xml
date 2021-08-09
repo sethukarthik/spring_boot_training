@@ -30,7 +30,7 @@
 			</property>
 		</bean>
 		
-		<bean name="account_1" class="com.spring_demo.maven_demo.Account" scope="prototype">
+		<bean id="account_1" name="acc_1,acc_2" class="com.spring_demo.maven_demo.Account" scope="prototype">
 			<property name="customer">
 				<ref bean="customer_1"/>
 			</property>
