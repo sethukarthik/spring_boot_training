@@ -1,7 +1,9 @@
 package com.spring_demo.java_config;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring_demo.maven_demo.Account;
+import com.spring_demo.maven_demo.Customer;
 
 public class Irctc {
 	
@@ -16,5 +18,10 @@ public class Irctc {
 		train.setTrainCode(12662);
 		train.setTrainName("Pothigai");
 		System.out.println(train);
+		Account acc = (Account) acac.getBean("account");
+		acc.setCustomer(new Customer());
+		acc.getClass();
+		acac.close();
 	}  
 }
+

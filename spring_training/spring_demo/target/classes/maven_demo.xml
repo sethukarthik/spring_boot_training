@@ -35,4 +35,8 @@
 				<ref bean="customer_1"/>
 			</property>
 		</bean>
+		
+		<!-- Import configuration java inside the XML -->
+		<bean name="javaP" class="com.spring_demo.java_config.Passanger"></bean>
+		<bean name="javaT" class="com.spring_demo.java_config.Train"></bean>
 </beans>
