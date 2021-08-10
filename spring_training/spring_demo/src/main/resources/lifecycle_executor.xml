@@ -39,6 +39,6 @@
 			<property name="userName" value="MavenUser"></property>
 		</bean> -->
 		
-		<bean class="com.spring_demo.lifecycle.FirstBeanPostProcessorDemo"/>
-		<bean class="com.spring_demo.lifecycle.SecondBeanPostProcessorDemo"/>
+		<!-- <bean class="com.spring_demo.lifecycle.FirstBeanPostProcessorDemo"/>
+		<bean class="com.spring_demo.lifecycle.SecondBeanPostProcessorDemo"/> -->
 </beans>
