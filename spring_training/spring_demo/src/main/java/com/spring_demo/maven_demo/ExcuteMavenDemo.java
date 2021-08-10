@@ -9,9 +9,9 @@ public class ExcuteMavenDemo {
 	public static void main(String[] args) {
 		
 		ClassPathXmlApplicationContext cpxac = new ClassPathXmlApplicationContext("maven_demo.xml");
-		Account acc = (Account) cpxac.getBean("acc_1");
-		acc.setCustomer(new Customer(1,"A"));
-		System.out.println(acc.getCustomer());
+//		Account acc = (Account) cpxac.getBean("acc_1");
+//		acc.setCustomer(new Customer(1,"A"));
+//		System.out.println(acc.getCustomer());
 //		Account acc = cpxac.getBean("account_1", Account.class);
 //		System.out.println(acc);
 //		acc.print();
