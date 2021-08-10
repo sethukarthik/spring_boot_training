@@ -13,8 +13,8 @@ public class ExcuteMavenDemo {
 		//Printing from Customer::Constructor::Default
 		//Printing from Account::Constructor::Default
 		ClassPathXmlApplicationContext cpxac = new ClassPathXmlApplicationContext("lifecycle_executor.xml");
-		Account account = cpxac.getBean("account", Account.class);
-		account.print();
+//		Account account = cpxac.getBean("account", Account.class);
+//		account.print();
 		cpxac.close();
 	}
 	

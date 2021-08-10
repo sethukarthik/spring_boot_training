@@ -83,7 +83,7 @@ public class Account implements ApplicationContextAware, BeanNameAware, Initiali
 
 	
 	//These destroy methods only available by shutting down gracefully (.close())
-	//If we don't have .close() in configuration the been will shut down forcefully and it won't avaiable
+	//If we don't have .close() in configuration the been will shut down forcefully and it won't available
 	@Override
 	public void destroy() throws Exception {
 		System.out.println("Account::Destroy::Interface");
