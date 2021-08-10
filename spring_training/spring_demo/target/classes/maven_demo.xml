@@ -23,6 +23,15 @@
 			<property name="userName" value="SpringUser"></property>
 		</bean>
 		
+		<bean id="customer_2" name="asCons" class="com.spring_demo.maven_demo.Customer">
+			<constructor-arg type="int">
+				<value>1</value>
+			</constructor-arg>
+			<constructor-arg type="java.lang.String">
+				<value>BootUser</value>
+			</constructor-arg>
+		</bean>
+		
 		<!-- We can use either Id or Name attribute -->
 		<bean name="account" class="com.spring_demo.maven_demo.Account">
 			<property name="customer">

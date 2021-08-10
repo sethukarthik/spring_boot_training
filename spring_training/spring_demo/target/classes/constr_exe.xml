@@ -1,0 +1,69 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+		
+	<bean id="sachin" class="com.spring_demo.constructor.Player">
+		<constructor-arg type="int">
+			<value>30</value>
+		</constructor-arg>
+		<constructor-arg type="int" index="2">
+			<value>10</value>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String">
+			<value>Sachin</value>
+		</constructor-arg>
+	</bean>	
+	
+	<bean id="cricket" class="com.spring_demo.constructor.Game">
+		<constructor-arg type="java.lang.String"><value>Cricket</value></constructor-arg>
+		<constructor-arg><ref bean="sachin"/></constructor-arg>
+		<!-- <constructor-arg ref="sachin"/> -->
+	</bean>
+	
+	<bean id="virat" class="com.spring_demo.constructor.Player" factory-method="newPlayer">
+		<constructor-arg type="int">
+			<value>18</value>
+		</constructor-arg>
+		<constructor-arg type="int" index="2">
+			<value>18</value>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String">
+			<value>Virat Kohli</value>
+		</constructor-arg>
+	</bean>
+		
+	<bean id="gameVirat" class="com.spring_demo.constructor.Game" factory-method="newGame">
+		<constructor-arg type="java.lang.String">
+			<value>Cricket</value>
+		</constructor-arg>
+		<constructor-arg ref="virat"/>
+	</bean>
+	
+	<bean id="dravid" class="com.spring_demo.constructor.Player" factory-method="newPlayer">
+		<constructor-arg type="int">
+			<value>25</value>
+		</constructor-arg>
+		<constructor-arg type="int" index="2">
+			<value>12</value>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String">
+			<value>Dravid</value>
+		</constructor-arg>
+	</bean>
+		
+	<bean id="gameDravid" class="com.spring_demo.constructor.Game" factory-method="newGameIns" factory-bean="gameVirat">
+		<constructor-arg type="java.lang.String">
+			<value>Cricket</value>
+		</constructor-arg>
+		<constructor-arg ref="dravid"/>
+	</bean>
+
+</beans>
