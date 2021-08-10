@@ -20,7 +20,7 @@
 		</bean>
 		
 		<!-- We can use either Id or Name attribute -->
-		<bean id="account" class="com.spring_demo.lifecycle.Account" init-method="afterPropertiesXML">
+		<bean id="account" class="com.spring_demo.lifecycle.Account" init-method="afterPropertiesXML" destroy-method="destroyXML">
 			<property name="accNum" value="123654789"></property>
 			<property name="customer">
 				<ref bean="customer"/>

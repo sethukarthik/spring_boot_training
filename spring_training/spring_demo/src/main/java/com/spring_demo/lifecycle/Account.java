@@ -1,15 +1,17 @@
 package com.spring_demo.lifecycle;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Account implements ApplicationContextAware, BeanNameAware, InitializingBean { //we can implement ApplicationContextAware using annotation
+public class Account implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean { //we can implement ApplicationContextAware using annotation
 //public class Account implements BeanNameAware {
  
 	private Customer customer;
@@ -79,4 +81,21 @@ public class Account implements ApplicationContextAware, BeanNameAware, Initiali
 		System.out.println("Account::AfterPropertiesSet::XML");
 	}
 
+	
+	//These destroy methods only available by shutting down gracefully (.close())
+	//If we don't have .close() in configuration the been will shut down forcefully and it won't avaiable
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Account::Destroy::Interface");
+	}
+
+	public void destroyXML() {
+		System.out.println("Account::DestroyXML::XML");
+	}
+	
+	@PreDestroy
+	public void destroyAnnotation() {
+		System.out.println("Account::DestroyAnnotation::Annotation");
+	}
+	
 }
