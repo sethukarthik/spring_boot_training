@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+		
+	<bean id="product" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Rice"></property>
+		<property name="productId" value="100"></property>
+	</bean>
+	
+	<bean id="product_1" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Wheat"></property>
+		<property name="productId" value="200"></property>
+	</bean>
+	
+	<bean id="product_3" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Cooking Oil"></property>
+		<property name="productId" value="300"></property>
+	</bean>
+	
+	<bean id="product_4" class="com.spring_demo.inventary.Product">
+		<property name="productName" value="Vegetables"></property>
+		<property name="productId" value="500"></property>
+	</bean>
+	
+	<!--  Inventory inventory = new Inventory() -->
+	<!--  Inventory inventory_1 = new Inventory() -->
+	<bean id="inventory" class="com.spring_demo.inventary.Inventory">
+		<!-- Set Method -->
+		<property name="product">
+			<ref bean="product"/>
+		</property>
+	</bean>
+	
+	<!-- Stock stock = new Stock(); stock.setProductName, stock.setProductId -->
+	<bean id="stock" class="com.spring_demo.inventary.Stock">
+		<property name="productName" value="Charger"></property> <!-- setMethod -->
+		<property name="productId" value="400"></property>	
+	</bean>
+	
+	<bean id="stock_1" class="com.spring_demo.inventary.Stock"></bean> <!-- Stock stock_1 = new Stock(); -->
+	
+	<!-- Stock stock = new Stock() -->
+	<!-- This bean has a scope of prototype -->
+	<bean id="inventory_1" class="com.spring_demo.inventary.Inventory" scope="prototype"> <!-- rf_id = 200 -->
+		<property name="product">
+			<ref bean="stock"/>
+		</property>
+	</bean>
+	
+	<bean id="inventory_2" class="com.spring_demo.inventary.Inventory">
+		<property name="product">
+			<ref bean="stock_1"/>
+		</property>
+	</bean>
+	
+	<bean id="hellow" class="com.spring_demo.inventary.HelloWorld"></bean>
+	<bean id="hellow_2" class="com.spring_demo.inventary.HelloWorldTwo" parent="hellow"></bean>
+
+</beans>
